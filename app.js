@@ -1,0 +1,1 @@
+document.getElementById("textplay").innerHTML = "Eyes Heal Online";
