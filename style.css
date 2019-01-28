@@ -1,0 +1,32 @@
+body,
+html {
+    height: 100%;
+}
+
+.bg {
+    background-image: url("img/eye.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.txtMain {
+    color: black;
+}
+
+.txtIndexBig {
+    color: #E51847;
+}
+
+.txtCommon {
+    color: black;
+}
+
+.center {
+    margin: auto;
+    /* width: 60%; */
+    height: 100%;
+    /* border: 3px solid #73AD21; */
+    padding: 7%;
+}
