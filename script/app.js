@@ -38,7 +38,7 @@ async function runEyesExercises() {
     await sleep(10);
 
     audio.play();
-    document.getElementById("ex").innerHTML = "You're done now";
+    document.getElementById("exBig").innerHTML = "You're done now";
 }
 
 
