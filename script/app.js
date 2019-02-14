@@ -41,6 +41,4 @@ async function runEyesExercises() {
     document.getElementById("exBig").innerHTML = "You're done now";
 }
 
-
-
 runEyesExercises();
