@@ -1,0 +1,51 @@
+data = `[{
+"id": "restEyesShort",
+"title": "Rest your eyes",
+"details": "Close eyes and place palms to your eyes",
+"duration": 10,
+"image": "rest.png"
+}, {
+    "id": "upDown",
+    "title": "Up/Down",
+    "details": "Move your eyes up and down",
+    "duration": 20,
+    "image": "updown.png"
+}, {
+  "id": "leftRight",
+  "title": "Left to right",
+    "details": "Move your eyes left to right",
+    "duration": 20,
+    "image": "leftright.png"
+}, {
+  "id": "goDiagonal",
+  "title": "Go diagonal",
+    "details": "Move your eyes diagonally",
+    "duration": 20,
+    "image": "diagonal.png"
+},{
+  "id": "clockwise",
+  "title": "Clockwise",
+    "details": "Move your eyes clockwise",
+    "duration": 10,
+    "image": "clockwise.png"
+}, {
+  "id": "oppositeClockwise",
+  "title": "Opposite Clockwise",
+    "details": "Move your eyes opposite clockwise",
+    "duration": 10,
+    "image": "opposite-clockwise.png"
+}, {
+  "id": "spiral",
+  "title": "Spiral",
+    "details": "Move your eyes spirally",
+    "duration": 20,
+    "image": "spiral.png"
+}, {
+  "id": "distance",
+  "title": "Look into the distance",
+    "details": "Relax your eyes and look into the distance",
+    "duration": 20,
+    "image": "distance.png"
+}
+]
+`;

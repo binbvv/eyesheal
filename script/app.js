@@ -6,39 +6,49 @@ function sleep(sec) {
 
 function runExercise(briefDescription) {
     audio.play();
-    document.getElementById("exBig").innerHTML = briefDescription;
+    let myData = JSON.parse(data);
+
+    myData.forEach(function(element) {
+        if (element.id === briefDescription) {
+            document.getElementById("exBig").innerHTML = element.title;
+            document.getElementById("exDetailedDesc").innerHTML = element.details;
+            document.getElementById("exImg").innerHTML = `<img src='assets/img/${element.image}' />`;
+            document.getElementById("countdown").innerHTML = `${element.duration} seconds`;
+        }
+    });
 }
 
 async function runEyesExercises() {
-    let restEyes = "Rest your eyes";
-
-    runExercise(restEyes);
+    runExercise("restEyesShort");
     await sleep(10);
-    runExercise("Up/Down");
+    runExercise("upDown");
     await sleep(20);
-    runExercise(restEyes);
+    runExercise("restEyesShort");
     await sleep(10);
-    runExercise("Left to right");
+    runExercise("leftRight");
     await sleep(20);
-    runExercise("Go diagonal");
+    runExercise("goDiagonal");
     await sleep(20);
-    runExercise(restEyes);
+    runExercise("restEyesShort");
     await sleep(10);
-    runExercise("Clockwise");
+    runExercise("clockwise");
     await sleep(10);
-    runExercise("Opposite Clockwise");
+    runExercise("oppositeClockwise");
     await sleep(10);
-    runExercise("Spiral");
+    runExercise("spiral");
     await sleep(20);
-    runExercise(restEyes);
+    runExercise("restEyesShort");
     await sleep(10);
-    runExercise("Into the distance");
+    runExercise("distance");
     await sleep(20);
-    runExercise(restEyes);
+    runExercise("restEyesShort");
     await sleep(10);
 
     audio.play();
     document.getElementById("exBig").innerHTML = "You're done now";
+    document.getElementById("exDetailedDesc").innerHTML = "";
+    document.getElementById("exImg").innerHTML = "";
+    document.getElementById("countdown").innerHTML = "";
 }
 
 runEyesExercises();
