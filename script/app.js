@@ -1,4 +1,5 @@
 var audio = new Audio('assets/sound/success.wav');
+var exerciseData = JSON.parse(data);
 
 function sleep(sec) {
     return new Promise(resolve => setTimeout(resolve, sec * 1000));
@@ -6,9 +7,7 @@ function sleep(sec) {
 
 function runExercise(briefDescription) {
     audio.play();
-    let myData = JSON.parse(data);
-
-    myData.forEach(function(element) {
+    exerciseData.forEach(function(element) {
         if (element.id === briefDescription) {
             document.getElementById("exBig").innerHTML = element.title;
             document.getElementById("exDetailedDesc").innerHTML = element.details;
