@@ -5,10 +5,10 @@ function sleep(sec) {
     return new Promise(resolve => setTimeout(resolve, sec * 1000));
 }
 
-function runExercise(briefDescription) {
+function runExercise(exerciseId) {
     audio.play();
     exerciseData.forEach(function(element) {
-        if (element.id === briefDescription) {
+        if (element.id === exerciseId) {
             document.getElementById("exBig").innerHTML = element.title;
             document.getElementById("exDetailedDesc").innerHTML = element.details;
             document.getElementById("exImg").innerHTML = `<img src='assets/img/${element.image}' />`;
