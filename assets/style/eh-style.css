@@ -1,0 +1,23 @@
+.txtMain {
+    color: black;
+}
+
+.txtIndexBig {
+    color: rgb(105, 16, 189);
+}
+
+.txtCommon {
+    color: black;
+}
+
+.center {
+    margin: auto;
+    height: 100%;
+    padding: 4%;
+}
+
+.button-blues {
+    background-color: transparent;
+    color: rgb(61, 61, 155);
+    border-color: rgb(61, 61, 155);
+}
