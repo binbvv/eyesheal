@@ -7,14 +7,23 @@ function sleep(sec) {
 
 function runExercise(exerciseId) {
     audio.play();
-    exerciseData.forEach(function(element) {
-        if (element.id === exerciseId) {
-            document.getElementById("exBig").innerHTML = element.title;
-            document.getElementById("exDetailedDesc").innerHTML = element.details;
-            document.getElementById("exImg").innerHTML = `<img src='assets/img/${element.image}' />`;
-            document.getElementById("countdown").innerHTML = `${element.duration} seconds`;
+    for (var i in exerciseData) {
+        if (exerciseData[i].id === exerciseId) {
+            document.getElementById("exBig").innerHTML = exerciseData[i].title;
+            document.getElementById("exDetailedDesc").innerHTML = exerciseData[i].details;
+            document.getElementById("exImg").innerHTML = `<img src='assets/img/${exerciseData[i].image}' />`;
+            document.getElementById("countdown").innerHTML = `${exerciseData[i].duration} seconds`;
+            break;
         }
-    });
+    }
+}
+
+function workoutIsOver() {
+    audio.play();
+    document.getElementById("exBig").innerHTML = "You're done now";
+    document.getElementById("exDetailedDesc").innerHTML = "";
+    document.getElementById("exImg").innerHTML = "";
+    document.getElementById("countdown").innerHTML = "";
 }
 
 async function runEyesExercises() {
@@ -42,12 +51,14 @@ async function runEyesExercises() {
     await sleep(20);
     runExercise("restEyesShort");
     await sleep(10);
-
-    audio.play();
-    document.getElementById("exBig").innerHTML = "You're done now";
-    document.getElementById("exDetailedDesc").innerHTML = "";
-    document.getElementById("exImg").innerHTML = "";
-    document.getElementById("countdown").innerHTML = "";
+    workoutIsOver();
 }
 
+function getUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const workoutIdParam = urlParams.get('workoutId');
+    console.log('My param is: ' + workoutIdParam);
+}
+
+//getUrlParameters();
 runEyesExercises();
