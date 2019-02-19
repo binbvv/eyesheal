@@ -1,0 +1,5 @@
+workouts = `[
+  {
+    "id": "daily",
+    "exercises":["restEyesShort", "upDown", "restEyesShort", "leftRight", "goDiagonal", "restEyesShort", "clockwise","oppositeClockwise","spiral","restEyesShort", "distance", "restEyesShort"]
+  }]`;
