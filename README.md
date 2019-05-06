@@ -1,2 +1,2 @@
 # Eyes Heal Pro
-Free online exercises for eyes.
+Short exercises for eyes.
