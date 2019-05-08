@@ -19,35 +19,32 @@ function getWorkoutId() {
     return urlParams.get('workoutId');
 }
 
-function getExercisesArray() {
-
+function getExercisesArr(workoutId) {
+    for (var i in workoutsData) {
+        if (workoutId === workoutsData[i].id) {
+            return workoutsData[i].exercises;
+        }
+    }
 }
 
-function runWorkout() {
-
+function showExercise(k) {
+    audio.play();
+    document.getElementById("exBig").innerHTML = exercisesData[k].title;
+    document.getElementById("exDetailedDesc").innerHTML = exercisesData[k].details;
+    document.getElementById("exImg").innerHTML = `<img src='assets/img/${exercisesData[k].image}' /width="40%" height="40%">`;
+    document.getElementById("countdown").innerHTML = `${exercisesData[k].duration} seconds`;
 }
 
 async function runEyesExercises() {
     let workoutId = getWorkoutId();
-    for (var i in workoutsData) {
-        // getExercisesArray
-        if (workoutId === workoutsData[i].id) {
-            let exercisesArr = workoutsData[i].exercises;
-            // runWorkout
-            for (var j in exercisesArr) {
-                for (var k in exercisesData) {
-                    if (exercisesData[k].id === exercisesArr[j]) {
-                        audio.play();
-                        document.getElementById("exBig").innerHTML = exercisesData[k].title;
-                        document.getElementById("exDetailedDesc").innerHTML = exercisesData[k].details;
-                        document.getElementById("exImg").innerHTML = `<img src='assets/img/${exercisesData[k].image}' /width="40%" height="40%">`;
-                        document.getElementById("countdown").innerHTML = `${exercisesData[k].duration} seconds`;
-                        await sleep(exercisesData[k].duration);
-                        break;
-                    }
-                }
+    let exercisesArr = getExercisesArr(workoutId);
+    for (var j in exercisesArr) {
+        for (var k in exercisesData) {
+            if (exercisesData[k].id === exercisesArr[j]) {
+                showExercise(k);
+                await sleep(exercisesData[k].duration);
+                break;
             }
-            break;
         }
     }
     workoutIsOver();
